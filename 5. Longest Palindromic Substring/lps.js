@@ -30,4 +30,4 @@ var longestPalindrome = function(s) {
     return result;
 };
 
-console.log(longestPalindrome("babad")); // Output can be "bab" or "aba"
+console.log(longestPalindrome("babad")); 
