@@ -1,17 +1,18 @@
 var twoSum = function(nums, target) {
-    let index = [];
-    for (let i = 0; i < nums.length; i++) {
-        for (let j = 0; j < i; j++) {
-                if (nums[i] + nums[j] == target) {
-                    index.push(i);
-                    index.push(j);
-                    break;
-                }
+    let obj = {}
+
+    for(let i = 0;i<nums.length;i++){
+        let diff = target - nums[i]
+        if(obj.hasOwnProperty(diff)){
+            return [obj[diff], i]
+        }
+        else{
+            obj[nums[i]] = i
         }
     }
-    return index;
+    return []
 };
 
-let nums = [2,7,11,15]
-let target  = 9;
+let nums = [3,2,4]
+let target  = 6;
 console.log(twoSum(nums,target));
