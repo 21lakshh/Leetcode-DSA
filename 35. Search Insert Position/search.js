@@ -1,9 +1,9 @@
-var search = function(nums, target) {
+var searchInsert = function(nums, target) {
     let l = 0
     let r = nums.length - 1
-
+    let mid;
     while (l<=r) {
-        let mid = Math.floor((l+r)/2)
+        mid = Math.floor((l+r)/2)
 
         if (target < nums[mid]) {
             r = mid - 1
@@ -15,7 +15,8 @@ var search = function(nums, target) {
             return mid
         }
     }
-    return -1
+
+    return l;
 };
 
-console.log(search([-1,0,3,5,9,12],9))
+console.log(searchInsert([1,3],2))
