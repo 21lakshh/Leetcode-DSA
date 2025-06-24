@@ -8,7 +8,7 @@ var search = function(nums, target) {
             return mid
         }
         else if (nums[l] <= nums[mid]) {
-            if (target >= nums[l] && target < nums[r]) {
+            if (target >= nums[l] && target < nums[mid]) {
                 r = mid-1
             }
             else{
@@ -16,7 +16,7 @@ var search = function(nums, target) {
             }
         }
         else{
-            if (target > nums[mid] && target <= nums[mid]) {
+            if (target > nums[mid] && target <= nums[r]) {
                 l = mid+1
             }
             else{
@@ -27,4 +27,4 @@ var search = function(nums, target) {
     return -1
 };
 
-console.log(search([4,5,6,7,0,1,2], 0))
+console.log(search([4,5,6,7,0,1,2], 5))
